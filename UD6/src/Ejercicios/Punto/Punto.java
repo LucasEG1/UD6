@@ -37,12 +37,20 @@ public class Punto {
         this.x += dx;
         this.y += dy;
     }
-    public void distancia(Punto p) {
+    public int distancia(Punto p) {
         
-        int distanciaX = p.getX() - this.x;
-        int distanciaY = p.getY() - this.y;
+        int distanciaX = p.getX() - x;
+        int distanciaY = p.getY() - y;
         
-        System.out.println("La diferencia entre las coordenadas de P (" + p.getX() + ","+ p.getY()+ ") y las actuales son:\n" +
-            "X: " + distanciaX + "\nY: " + distanciaY);
+        int distanciaDiagonal = (int) Math.sqrt(distanciaX * distanciaX + distanciaY * distanciaY);
+        return distanciaDiagonal;
+    }
+    public static Punto creaPuntoAleatorio() {
+        
+        int ranX = (int)(Math.random()*(201)-100);
+        int ranY = (int)(Math.random()*(201)-100);
+        
+        Punto a = new Punto(ranX, ranY);
+        return a;
     }
 }

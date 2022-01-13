@@ -7,7 +7,7 @@ public class Main {
         
         Articulo art1 = new Articulo("Comida", 2.75, 21, 3);
         
-        art1.setNombre("Shampoo");
+        art1.setNombreProd("Shampoo");
         art1.setPrecio(55.99);
         art1.mostrarArticulo();
     }

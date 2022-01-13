@@ -11,5 +11,6 @@ public class Main {
         
         pt2.setXY(5, 5);
         pt2.imprime();
+        System.out.println(pt1.distancia(pt2));
     }
 }

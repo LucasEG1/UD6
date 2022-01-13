@@ -31,6 +31,22 @@ public class Rectangulo {
     public int getY2() {
         return this.y2;
     }
+    public int getPerim() {
+        
+        int ancho = Math.abs(this.getX2() - this.getX1());
+        int alto  = Math.abs(this.getY2() - this.getY1());
+        int perimetro = (2*alto) + (2*ancho);
+        
+        return perimetro;
+    }
+    public int getArea() {
+        
+        int base = Math.abs(this.getX2() - this.getX1());
+        int altura  = Math.abs(this.getY2() - this.getY1());
+        int area = base*altura;
+        
+        return area;
+    }
     
     public void setX1(int x1) {
         if (x1 < this.getX2())
@@ -56,6 +72,40 @@ public class Rectangulo {
         else
             this.y2 = y2;
     }
+    public void setX1Y1(int x, int y){
+        
+        if (x < this.getX2())
+            System.err.println("Error: X1 no puede ser mayor que X2");
+        else
+            this.setX1(x);
+        
+        if (y > this.getY2())
+            System.err.println("Error: Y1 no puede ser mayor que Y2");
+        else
+            this.setY1(y);
+        
+    }
+    public void setX2Y2(int x, int y){
+        if (x2 < this.getX1())
+            System.err.println("Error: X2 no puede ser menor que X1");
+        else
+            this.setX2(x);
+        
+        if (y2 < this.getY1())
+            System.err.println("Error: Y2 no puede ser menor que Y1");
+        else
+            this.setY2(y);
+    }
+    public void setAll(int x1, int y1, int x2, int y2){
+        if (x2 < x1 || y2 < y1){
+            System.err.println("Error al modificar objeto: Los parámetros especificados no son válidos.");
+        } else {
+            this.setX1(x1);
+            this.setY1(y1);
+            this.setX2(x2);
+            this.setY2(y2);
+        }
+    }
     
     //Otras funciones
     public static Rectangulo crearRectangulo() {
@@ -76,43 +126,12 @@ public class Rectangulo {
         Rectangulo rec = new Rectangulo(x1, y1, x2, y2);
         return rec;
     }
-    public int perim(int x1, int y1, int x2, int y2) {
-        
-        int ancho = Math.abs(x2 - x1);
-        int alto  = Math.abs(y2-y1);
-        int perimetro = (2*alto) + (2*ancho);
-        
-        return perimetro;
-    }
-    public int area(int x1, int y1, int x2, int y2) {
-        
-        int base = Math.abs(x2 - x1);
-        int altura  = Math.abs(y2-y1);
-        int area = base*altura;
-        return area;
-    }
+    
     public void info(){
         System.out.println("Información del rectángulo: ");
         System.out.println("Coordenada X inferior izq: " + this.getX1());
         System.out.println("Coordenada Y inferior izq: " + this.getY1());
         System.out.println("Coordenada X superior dcha: " + this.getX2());
         System.out.println("Coordenada Y superior dcha: " + this.getY2());
-    }
-    public void setX1Y1(int x, int y){
-        this.setX1(x);
-        this.setY1(y);
-    }
-    public void setX2Y2(int x, int y){
-        this.setX2(x);
-        this.setY2(y);
-    }
-    public void setAll(int x1, int y1, int x2, int y2){
-        if (x2 < x1 || y2 < y1){
-            System.err.println("Error al crear objeto: Los parámetros especificados no son válidos.");
-        }
-        this.setX1(x1);
-        this.setY1(y1);
-        this.setX2(x2);
-        this.setY2(y2);
     }
 }
