@@ -85,7 +85,7 @@ public class Reloj {
     }
     public String dimeHora12(){
         String modo;
-        if (this.hora >=0 && this.hora < 13){
+        if (this.hora >=0 && this.hora < 12){
         modo = "AM";
         } else {
             modo = "PM";

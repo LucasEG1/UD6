@@ -1,23 +1,36 @@
 
 package EjercicioForo;
+
+import java.util.ArrayList;
+import java.util.List;
+
+enum tipoCoche {
+        MINI,
+        UTILITARIO,
+        FAMILIAR,
+        DEPORTIVO;
+    }
+enum seguro {TERCEROS, TODO_RIESGO;}
+
 public class Coche {
     private String modelo;
     private String color;
     private boolean esMetalizado;
     private String matricula;
-    private enum tipoCoche {
-        MINI(),
-        UTILITARIO(),
-        FAMILIAR(),
-        DEPORTIVO();
-    }
+    private tipoCoche tipoCoche;
+    private seguro tipoSeguro;
     private int añoFabricacion;
-    private enum seguro {TERCEROS, TODO_RIESGO;}
+    
     
     //Constructor
-    public Coche(String modelo, String color, boolean esMetalizado, 
-            String matricula,int añoFabric) {
-        
+    public Coche(String modelo, String color, boolean esMetalizado, String matricula, tipoCoche tipoCoche, seguro tipoSeguro, int añoFabric) {
+        setModelo(modelo);
+        setColor(color);
+        setEsMetalizado(esMetalizado);
+        setMatricula(matricula);
+        setTipoCoche(tipoCoche);
+        setTipoSeguro(tipoSeguro);
+        setAñoFabricacion(añoFabric);
     }
     
     //Getters - Setters
@@ -37,8 +50,12 @@ public class Coche {
         return añoFabricacion;
     }
     public String getTipoCoche() {
-        return "------------------";
+        return this.tipoCoche.toString();
     }
+    public String getTipoSeguro(){
+        return this.tipoSeguro.toString();
+    }
+    
     
     public void setModelo(String modelo) {
         this.modelo = modelo;
@@ -55,7 +72,11 @@ public class Coche {
     public void setAñoFabricacion(int añoFabricacion) {
         this.añoFabricacion = añoFabricacion;
     }
-    public void setTipoCoche() {
-        
+    public void setTipoCoche(tipoCoche tipoDeCoche) {
+        this.tipoCoche = tipoDeCoche;
     }
+    public void setTipoSeguro(seguro tipoSeguro){
+        this.tipoSeguro = tipoSeguro;
+    }
+        
 }

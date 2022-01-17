@@ -29,7 +29,10 @@ public class Main_Reloj {
         
         System.out.println("--Reloj 4--");
         
-        Reloj r4 = new Reloj(10, 35, 0);
+        Reloj r4 = new Reloj(11, 59, 59);
+        r4.imprimeHora();
+        r4.imprimeHora12();
+        r4.tick();
         r4.imprimeHora();
         r4.imprimeHora12();
     }
