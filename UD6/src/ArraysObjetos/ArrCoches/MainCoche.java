@@ -13,7 +13,7 @@ public class MainCoche {
         //Pide la info de cada coche
         for (int i = 0; i < vCoche.length; i++) {
             
-            System.out.println("····|COCHE " + i + "|····");
+            System.out.println("····|COCHE " + (i+1) + "|····");
             
             System.out.println("Modelo:");
             String modelo = leer.nextLine();
@@ -50,8 +50,8 @@ public class MainCoche {
             }
             
             System.out.println("Tipo de seguro? (1:TERCEROS, 2:TODO RIESGO)");
-            int tipoSeg = leer.nextInt();
             Coche.modalidadSeguro ts = null;
+            int tipoSeg = leer.nextInt();
             switch (tipoSeg) {
                 case 1:
                     ts = Coche.modalidadSeguro.TERCEROS;
