@@ -97,7 +97,8 @@ public class CP_AgendaContactos {
      */
     
     // Muestra el menú y devuelve la opción elegida por el usuario
-    public static int menu() {
+    
+        public static int menu() {
 
         System.out.println("1. Ver contactos");
         System.out.println("2. Agregar contacto.");
@@ -136,10 +137,6 @@ public class CP_AgendaContactos {
         Scanner in = new Scanner(System.in);
         return in.nextLine();
     }
-
-    /**
-     * FUNCIONES DE MOSTRAR CONTACTOS
-     */
 
     // Muestra la información solo del contacto 'pos' (índice de los vectores) 
     public static void verContactoPos(int pos) {
@@ -259,4 +256,8 @@ public class CP_AgendaContactos {
         return vpos;
         
     }
+    /**
+     * FUNCIONES DE MOSTRAR CONTACTOS
+     */
+
 }
