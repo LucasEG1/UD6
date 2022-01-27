@@ -1,5 +1,5 @@
 
-package CasoPractico;
+package CasoPracticoAgenda;
 
 import java.util.Scanner;
 
@@ -15,7 +15,7 @@ public class Main {
         
         do {
             opcion = Func.menu();
-            leer.nextLine();
+            // leer.nextLine();
             switch(opcion) {
                 case 1:
                     System.out.println("==|VER CONTACTOS|==");

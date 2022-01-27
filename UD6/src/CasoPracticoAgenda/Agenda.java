@@ -1,6 +1,4 @@
-package CasoPractico;
-
-import java.util.Arrays;
+package CasoPracticoAgenda;
 
 public class Agenda {
 
@@ -16,13 +14,24 @@ public class Agenda {
     //Getters - Setters
     
     //Otras funciones
-    public void agregarContacto(Contacto c){
-        
-        if (cuantos >= contactos.length){
+    public void agregarContacto(Contacto c) {
+
+        boolean encontrado = false;
+
+        for (int i = 0; i < cuantos; i++) {
+
+            if (c.getNombre().equals(contactos[i].getNombre())) {
+                encontrado = true;
+            }
+        }
+
+        if (cuantos >= contactos.length) {
             System.err.println("Agenda llena. El contacto no se ha agregado.");
+        } else if (encontrado == true) {
+            System.err.println("Ya existe un contacto con este nombre.");
         } else {
-        this.contactos[cuantos] = c;
-        cuantos++;
+            this.contactos[cuantos] = c;
+            cuantos++;
         }
     }
     
@@ -46,7 +55,7 @@ public class Agenda {
         
         for (int i = 0; i < cuantos; i++) {
             
-            if (busqueda.toUpperCase().contains(contactos[i].getNombre().toUpperCase())){
+            if (contactos[i].getNombre().toUpperCase().contains(busqueda.toUpperCase())){
                 //encontrados[cuantosEncontrados] = contactos[i];
                 cuantosEncontrados++;
                 ae.agregarContacto(contactos[i]);
@@ -63,6 +72,7 @@ public class Agenda {
             System.err.println("No hay contactos registrados.");
         } else {
             for (int i = 0; i < cuantos; i++) {
+                System.out.print(i+ ": ");
                 contactos[i].verContacto();
             }
         }

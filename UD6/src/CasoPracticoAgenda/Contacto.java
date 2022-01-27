@@ -1,5 +1,5 @@
 
-package CasoPractico;
+package CasoPracticoAgenda;
 
 public class Contacto {
     
@@ -39,7 +39,6 @@ public class Contacto {
     
     //Otras funciones
     public void verContacto(){
-        System.out.println(this.nombre + "\t" + this.telefono + "\t" + this.correo);
-    }
-    
+        System.out.println(this.nombre + "\t\t" + this.telefono + "\t" + this.correo);
+    }   
 }

@@ -1,5 +1,5 @@
 
-package CasoPractico;
+package CasoPracticoAgenda;
 
 import java.util.Scanner;
 
