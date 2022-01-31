@@ -2,45 +2,48 @@
 
 <ClassDiagram name="UMLVideoclub">
   <ClassDiagramComponents>
-    <Class name="Videoclub" package="" visibility="public" xPosition="267.0" yPosition="85.0">
+    <Class name="Videoclub" package="" visibility="public" xPosition="269.0" yPosition="78.0">
       <Fields>
-        <Field name="pelisDisponibles" type="Pelicula[]" visibility="private"/>
-        <Field name="clientes" type="Cliente[]" visibility="private"/>
-        <Field name="pelisAlquiladas" type="Pelicula[]" visibility="private"/>
+        <Field name="peliculas" type="Pelicula[]" visibility="private"/>
+        <Field name="usuarios" type="Usuarios[]" visibility="private"/>
       </Fields>
       <Constructors/>
-      <Methods/>
+      <Methods>
+        <Method name="mostrarAlquiladas" returnType="void" visibility="public"/>
+        <Method name="mostrarTodas" returnType="void" visibility="public"/>
+      </Methods>
     </Class>
     <Class name="Pelicula" package="" visibility="public" xPosition="108.0" yPosition="310.0">
       <Fields>
         <Field name="titulo" type="String" visibility="private"/>
         <Field name="fechaEstreno" type="String" visibility="private"/>
         <Field name="sinopsis" type="String" visibility="private"/>
-        <Field name="poseedor" type="Cliente" visibility="private"/>
+        <Field name="poseedor" type="Usuarios" visibility="private"/>
+        <Field name="esAlquilada" type="boolean" visibility="private"/>
       </Fields>
       <Constructors/>
       <Methods/>
     </Class>
-    <Class name="Cliente" package="" visibility="public" xPosition="464.0" yPosition="310.0">
+    <Class name="Usuarios" package="" visibility="public" xPosition="455.0" yPosition="310.0">
       <Fields>
         <Field name="nombre" type="String" visibility="private"/>
         <Field name="correo" type="String" visibility="private"/>
-        <Field name="untitledField" type="Object" visibility="private"/>
         <Field name="biblioteca" type="Pelicula[]" visibility="private"/>
+        <Field name="esPremium" type="boolean" visibility="private"/>
       </Fields>
       <Constructors/>
       <Methods>
         <Method name="suscribirse" returnType="void" visibility="public"/>
         <Method name="anularSuscrip" returnType="void" visibility="public"/>
-        <Method name="buscarNombre" returnType="Pelicula[]" visibility="public">
+        <Method name="buscarNombre" returnType="String" visibility="public">
           <Argument type="String" name="buscar"/>
         </Method>
         <Method name="verPelisAlquiladas" returnType="void" visibility="public"/>
         <Method name="verPelisVideoclub" returnType="void" visibility="public"/>
-        <Method name="alquilar" returnType="void" visibility="public">
+        <Method name="alquilar" returnType="Pelicula" visibility="public">
           <Argument type="Pelicula" name="p"/>
         </Method>
-        <Method name="devolver" returnType="void" visibility="public">
+        <Method name="devolver" returnType="Pelicula" visibility="public">
           <Argument type="Pelicula" name="p"/>
         </Method>
       </Methods>
@@ -57,7 +60,9 @@
   </ClassDiagramComponents>
   <ClassDiagramRelations>
     <UseRelation name="tipoGenero" source="Pelicula" target="genero" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="poseer" source="Usuarios" target="Pelicula" type="Aggregation" sourceCardinality="0..1" targetCardinality="0..*" collectionType="List"/>
+    <HasRelation name="pelisAlquiladas" source="Videoclub" target="Pelicula" type="Aggregation" sourceCardinality="0..1" targetCardinality="0..*" collectionType="List"/>
     <HasRelation name="tiene" source="Videoclub" target="Pelicula" type="Aggregation" sourceCardinality="0..1" targetCardinality="0..1"/>
-    <HasRelation name="tiene" source="Videoclub" target="Cliente" type="Aggregation" sourceCardinality="0..1" targetCardinality="0..*" collectionType="List"/>
+    <HasRelation name="tiene" source="Videoclub" target="Usuarios" type="Aggregation" sourceCardinality="0..1" targetCardinality="0..*" collectionType="List"/>
   </ClassDiagramRelations>
 </ClassDiagram>
