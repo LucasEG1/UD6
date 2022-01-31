@@ -33,7 +33,7 @@ public class Cuenta {
     public void verCuenta(){
         System.out.println(this.nombre + "\t" + this.saldo);
     }
-    public void ingersar(double dinero){
+    public void ingresar(double dinero){
         if (dinero < 0) {
             System.err.println("No se puede ingresar dinero negativo. La operación fue cancelada.");
         } else {
@@ -45,6 +45,7 @@ public class Cuenta {
             System.err.println("La cuenta no puede tener un saldo inferior a -100€");
             return false;
         } else {
+            System.out.println("La operación se ha realizado con éxito");
             this.saldo -= dinero;
             return true;
         }
