@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="UMLVideoclub">
+  <ClassDiagramComponents>
+    <Class name="Videoclub" package="" visibility="public" xPosition="267.0" yPosition="85.0">
+      <Fields>
+        <Field name="pelisDisponibles" type="Pelicula[]" visibility="private"/>
+        <Field name="clientes" type="Cliente[]" visibility="private"/>
+        <Field name="pelisAlquiladas" type="Pelicula[]" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Pelicula" package="" visibility="public" xPosition="108.0" yPosition="310.0">
+      <Fields>
+        <Field name="titulo" type="String" visibility="private"/>
+        <Field name="fechaEstreno" type="String" visibility="private"/>
+        <Field name="sinopsis" type="String" visibility="private"/>
+        <Field name="poseedor" type="Cliente" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Cliente" package="" visibility="public" xPosition="464.0" yPosition="310.0">
+      <Fields>
+        <Field name="nombre" type="String" visibility="private"/>
+        <Field name="correo" type="String" visibility="private"/>
+        <Field name="untitledField" type="Object" visibility="private"/>
+        <Field name="biblioteca" type="Pelicula[]" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="suscribirse" returnType="void" visibility="public"/>
+        <Method name="anularSuscrip" returnType="void" visibility="public"/>
+        <Method name="buscarNombre" returnType="Pelicula[]" visibility="public">
+          <Argument type="String" name="buscar"/>
+        </Method>
+        <Method name="verPelisAlquiladas" returnType="void" visibility="public"/>
+        <Method name="verPelisVideoclub" returnType="void" visibility="public"/>
+        <Method name="alquilar" returnType="void" visibility="public">
+          <Argument type="Pelicula" name="p"/>
+        </Method>
+        <Method name="devolver" returnType="void" visibility="public">
+          <Argument type="Pelicula" name="p"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Enum name="genero" package="" visibility="public" xPosition="109.0" yPosition="527.0">
+      <Literals>
+        <Literal name="Aventuras"/>
+        <Literal name="Horror"/>
+        <Literal name="Ciencia-ficcion"/>
+        <Literal name="Comedia"/>
+        <Literal name="Drama"/>
+      </Literals>
+    </Enum>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <UseRelation name="tipoGenero" source="Pelicula" target="genero" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="tiene" source="Videoclub" target="Pelicula" type="Aggregation" sourceCardinality="0..1" targetCardinality="0..1"/>
+    <HasRelation name="tiene" source="Videoclub" target="Cliente" type="Aggregation" sourceCardinality="0..1" targetCardinality="0..*" collectionType="List"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
