@@ -2,17 +2,17 @@ package EntregableUD6;
 
 public class Pelicula {
 
+    public enum eGenero {
+    Aventuras, Horror, CienciaFiccion, Comedia, Drama
+    }
+    
     private String titulo;
-
     private String fechaEstreno;
-
     private String sinopsis;
-
     private Usuario poseedor;
-
     private boolean esAlquilada;
-
     public int cuantasPelis = 0;
+    public eGenero genero;
 
     //Constructor
     public Pelicula(String titulo, String fechaEstreno, String sinopsis) {    
@@ -39,6 +39,9 @@ public class Pelicula {
     public boolean getEsAlquilada() {
         return esAlquilada;
     }
+    public eGenero getGenero(){
+        return this.genero;
+    }
     
     public void setTitulo(String titulo) {
         this.titulo = titulo;
@@ -54,6 +57,27 @@ public class Pelicula {
     }
     public void setEsAlquilada(boolean esAlquilada) {
         this.esAlquilada = esAlquilada;
+    }
+    public void setGenero(int gen){
+        switch (gen){
+            case 1:
+                this.genero = genero.Aventuras;
+                break;
+            case 2: 
+                this.genero = genero.Horror;
+                break;
+            case 3:
+                this.genero = genero.CienciaFiccion;
+                break;
+            case 4: 
+                this.genero = genero.Comedia;
+                break;
+            case 5:
+                this.genero = genero.Drama;
+                break;
+            default:
+                System.out.println("Número introducido no válido.");
+        }
     }
 
     //Otras funciones

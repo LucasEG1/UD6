@@ -1,10 +1,23 @@
 package EntregableUD6;
 
+import java.util.Scanner;
+
 public class Videoclub {
 
     private static Pelicula[] peliculas = new Pelicula[15];
     private static Usuario[] usuarios;
-    
+    public static int menu(){
+        Scanner in = new Scanner(System.in);
+        System.out.println("==|¿QUÉ QUIERES HACER?|==");
+        System.out.println("1. Ver películas disponibles");
+        System.out.println("2. Alquilar una película");
+        System.out.println("3. Devolver una película");
+        System.out.println("4. Ver información de una película");
+        System.out.println("5. Ver quién tiene cada película");
+        System.out.println("6. Salir del programa.");
+        int eleccion = in.nextInt();
+        return eleccion;
+    }
     public void mostrarAlquiladas() {
         for (int i = 0; i < peliculas.length; i++) {
             if (peliculas[i].getEsAlquilada() == true){
@@ -15,7 +28,6 @@ public class Videoclub {
     public void mostrarTodas() {
         for (int i = 0; i < peliculas.length; i++) {
             peliculas[i].mostrarPelicula();
-            
         }
     }
     
@@ -26,7 +38,6 @@ public class Videoclub {
         usuarios[2] = new Usuario("Lionel", "lionel@daw.com");
         usuarios[3] = new Usuario("Juan", "juan@daw.com");
         usuarios[4] = new Usuario("Fani", "fani@daw.com");
-        
         
         peliculas[0] = new Pelicula("Spider-Man", "2002", "A peter parker lo pica una araña y se convierte en héroe.");
         peliculas[1] = new Pelicula("Indiana Jones", "1981", "Un profesor se mete de lleno en aventuras de catacumbas y tesoros antiguos");
@@ -40,9 +51,29 @@ public class Videoclub {
         peliculas[9] = new Pelicula("La milla verde", "1999", "Un prisionero llega a una carcel de USA en la con su don cambiara tanto el ambiente dl lugar como a las personas del lugar");
         peliculas[10] = new Pelicula("Ghost in the shell", "1995", "En un japon futurista varios policias luchan por el orden en las calles en las que nuestra protagonista vera que hasta lo que le queda de humanidad lucha a su lado");
         peliculas[11] = new Pelicula("Dredd", "2012", "En un mundo futurista la sobrepoblacion y caos se adueñan de las calles, lo que hace que la justicia se imparta por los jueces, personas que hacen tanto como policia y a su vez como verdugo");
-        peliculas[12] = new Pelicula("El lobo de Wall Sreet","2013","LEONARDO DI CAPRIO QUIERE SU OSCAR");
+        peliculas[12] = new Pelicula("El lobo de Wall Sreet","2013","un hombre común que comenzó vendiendo helados a los dieciséis años y terminó por ganando cientos de millones de dólares. Luego la ley lo descubre y tiene que soportar el peso de la justicia");
         peliculas[13] = new Pelicula("Jungla de Cristal", "1988", "Un policia inactivo se ve envuelto en un ataque terrorista en el que demostrara sus dotes como policia y marido");
         peliculas[14] = new Pelicula("Club de la lucha", "1999", "1º Regla del club de lucha, no se habla sobre el club de la lucha");
+        
+        int opcion;
+        do {     
+            opcion = menu();
+            switch (opcion) {
+                case 1:
+                    break;
+                case 2:
+                    break;
+                case 3:
+                    break;
+                case 4:
+                    break;
+                case 5:
+                    break;
+                case 6:
+                    break;
+            }
+            
+        } while (opcion != 6);
         
     }
 }
