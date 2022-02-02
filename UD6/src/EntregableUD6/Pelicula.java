@@ -8,7 +8,7 @@ public class Pelicula {
 
     private String sinopsis;
 
-    private Usuarios poseedor;
+    private Usuario poseedor;
 
     private boolean esAlquilada;
 }
