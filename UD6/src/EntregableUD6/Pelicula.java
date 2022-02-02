@@ -14,46 +14,49 @@ public class Pelicula {
 
     public int cuantasPelis = 0;
 
-    public String getTitulo() {
-        return titulo;
-    }
-
-    public void setTitulo(String titulo) {
+    //Constructor
+    public Pelicula(String titulo, String fechaEstreno, String sinopsis) {    
         this.titulo = titulo;
-    }
-
-    public String getFechaEstreno() {
-        return fechaEstreno;
-    }
-
-    public void setFechaEstreno(String fechaEstreno) {
         this.fechaEstreno = fechaEstreno;
-    }
-
-    public String getSinopsis() {
-        return sinopsis;
-    }
-
-    public void setSinopsis(String sinopsis) {
         this.sinopsis = sinopsis;
-    }
-
-    public Usuario getPoseedor() {
-        return poseedor;
-    }
-
-    public void setPoseedor(Usuario poseedor) {
+        this.esAlquilada = false;
         this.poseedor = poseedor;
     }
 
-    public boolean isEsAlquilada() {
+    //Getters - Setters
+    public String getTitulo() {
+        return titulo;
+    }
+    public String getFechaEstreno() {
+        return fechaEstreno;
+    }
+    public String getSinopsis() {
+        return sinopsis;
+    }
+    public Usuario getPoseedor() {
+        return poseedor;
+    }
+    public boolean getEsAlquilada() {
         return esAlquilada;
     }
-
+    
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
+    public void setFechaEstreno(String fechaEstreno) {
+        this.fechaEstreno = fechaEstreno;
+    }
+    public void setSinopsis(String sinopsis) {
+        this.sinopsis = sinopsis;
+    }    
+    public void setPoseedor(Usuario poseedor) {
+        this.poseedor = poseedor;
+    }
     public void setEsAlquilada(boolean esAlquilada) {
         this.esAlquilada = esAlquilada;
     }
 
+    //Otras funciones
     public void mostrarPelicula() {
         System.out.println("Título: " + titulo + "\nEstrenada en " + fechaEstreno + " trata de: " + sinopsis + " y esta alquilada por " + poseedor); //getNombre        
     }
