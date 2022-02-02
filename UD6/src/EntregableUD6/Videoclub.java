@@ -40,7 +40,7 @@ public class Videoclub {
         peliculas[9] = new Pelicula("La milla verde", "1999", "Un prisionero llega a una carcel de USA en la con su don cambiara tanto el ambiente dl lugar como a las personas del lugar");
         peliculas[10] = new Pelicula("Ghost in the shell", "1995", "En un japon futurista varios policias luchan por el orden en las calles en las que nuestra protagonista vera que hasta lo que le queda de humanidad lucha a su lado");
         peliculas[11] = new Pelicula("Dredd", "2012", "En un mundo futurista la sobrepoblacion y caos se adueñan de las calles, lo que hace que la justicia se imparta por los jueces, personas que hacen tanto como policia y a su vez como verdugo");
-        peliculas[12] = new Pelicula("Juegos de Guerra","1983","LUCAAAAAAAAAAS");
+        peliculas[12] = new Pelicula("El lobo de Wall Sreet","2013","LEONARDO DI CAPRIO QUIERE SU OSCAR");
         peliculas[13] = new Pelicula("Jungla de Cristal", "1988", "Un policia inactivo se ve envuelto en un ataque terrorista en el que demostrara sus dotes como policia y marido");
         peliculas[14] = new Pelicula("Club de la lucha", "1999", "1º Regla del club de lucha, no se habla sobre el club de la lucha");
         
