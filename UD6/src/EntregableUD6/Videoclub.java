@@ -4,7 +4,7 @@ public class Videoclub {
 
     private Pelicula[] peliculas;
 
-    private Usuarios[] usuarios;
+    private Usuario[] usuarios;
 
     public void mostrarAlquiladas() {
     }
