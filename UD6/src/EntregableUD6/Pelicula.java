@@ -38,11 +38,11 @@ public class Pelicula {
         this.sinopsis = sinopsis;
     }
 
-    public Usuarios getPoseedor() {
+    public Usuario getPoseedor() {
         return poseedor;
     }
 
-    public void setPoseedor(Usuarios poseedor) {
+    public void setPoseedor(Usuario poseedor) {
         this.poseedor = poseedor;
     }
 
