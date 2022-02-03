@@ -82,7 +82,16 @@ public class Pelicula {
 
     //Otras funciones
     public void mostrarPelicula() {
-        System.out.println("Título: " + titulo + "\nEstrenada en " + fechaEstreno + " trata de: " + sinopsis + " y esta alquilada por " + poseedor); //getNombre        
+        System.out.println("--Título: " + getTitulo());
+        System.out.println("--Estreno: " + getFechaEstreno());
+        System.out.println("--Género: " + getGenero());
+        System.out.println("--Sinopsis " + getSinopsis());
+        if (getEsAlquilada() == true){
+            System.out.println("¿Está alquilada?: " + getEsAlquilada());
+            System.out.println("--Alquilada por: " + getPoseedor());
+        } else {
+            System.out.println("--¿Está alquilada?: " + getEsAlquilada());
+        }
+        System.out.println("\n");
     }
-
 }

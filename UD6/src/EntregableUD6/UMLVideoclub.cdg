@@ -2,7 +2,7 @@
 
 <ClassDiagram name="UMLVideoclub">
   <ClassDiagramComponents>
-    <Class name="Videoclub" package="" visibility="public" xPosition="269.0" yPosition="78.0">
+    <Class name="Videoclub" package="" visibility="public" xPosition="300.0" yPosition="58.0">
       <Fields>
         <Field name="peliculas" type="Pelicula[]" visibility="private"/>
         <Field name="usuarios" type="Usuarios[]" visibility="private"/>
@@ -13,7 +13,7 @@
       <Methods>
         <Method name="mostrarAlquiladas" returnType="void" visibility="public"/>
         <Method name="mostrarTodas" returnType="void" visibility="public"/>
-        <Method name="verUsuarios" returnType="void" visibility="public"/>
+        <Method name="menu" returnType="int" visibility="public"/>
       </Methods>
     </Class>
     <Class name="Pelicula" package="" visibility="public" xPosition="82.0" yPosition="312.0">
@@ -25,7 +25,9 @@
         <Field name="esAlquilada" type="boolean" visibility="private"/>
       </Fields>
       <Constructors/>
-      <Methods/>
+      <Methods>
+        <Method name="mostrarPelicula" returnType="void" visibility="public"/>
+      </Methods>
     </Class>
     <Class name="Usuarios" package="" visibility="public" xPosition="470.0" yPosition="336.0">
       <Fields>
@@ -43,11 +45,10 @@
           <Argument type="String" name="buscar"/>
         </Method>
         <Method name="verPelisAlquiladas" returnType="void" visibility="public"/>
-        <Method name="verPelisVideoclub" returnType="void" visibility="public"/>
-        <Method name="alquilar" returnType="void" visibility="public">
+        <Method name="alquilar" returnType="Pelicula" visibility="public">
           <Argument type="Pelicula" name="p"/>
         </Method>
-        <Method name="devolver" returnType="void" visibility="public">
+        <Method name="devolver" returnType="int" visibility="public">
           <Argument type="int" name="pos"/>
         </Method>
       </Methods>
@@ -61,13 +62,23 @@
         <Literal name="Drama"/>
       </Literals>
     </Enum>
+    <Class name="Func (funciones)" package="" visibility="public" xPosition="688.0" yPosition="118.0">
+      <Fields>
+        <Field name="untitledField" type="Object" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="untitledMethod" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
   </ClassDiagramComponents>
   <ClassDiagramRelations>
-    <HasRelation name="poseer" source="Usuarios" target="Pelicula" type="Aggregation" sourceCardinality="0..1" targetCardinality="0..*" collectionType="List"/>
-    <HasRelation name="tiene" source="Videoclub" target="Pelicula" type="Aggregation" sourceCardinality="0..1" targetCardinality="0..1"/>
-    <HasRelation name="laTiene" source="Pelicula" target="Usuarios" type="Default" sourceCardinality="0..1" targetCardinality="0..1"/>
-    <HasRelation name="tiene" source="Videoclub" target="Usuarios" type="Aggregation" sourceCardinality="0..1" targetCardinality="0..*" collectionType="List"/>
+    <UseRelation name="Utiliza" source="Videoclub" target="Func (funciones)" sourceCardinality="0..1" targetCardinality="1..1"/>
     <HasRelation name="pelisAlquiladas" source="Videoclub" target="Pelicula" type="Aggregation" sourceCardinality="0..1" targetCardinality="0..*" collectionType="List"/>
     <UseRelation name="tipoGenero" source="Pelicula" target="genero" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="poseer" source="Usuarios" target="Pelicula" type="Aggregation" sourceCardinality="0..1" targetCardinality="0..*" collectionType="List"/>
+    <HasRelation name="tiene" source="Videoclub" target="Usuarios" type="Aggregation" sourceCardinality="0..1" targetCardinality="0..*" collectionType="List"/>
+    <HasRelation name="laTiene" source="Pelicula" target="Usuarios" type="Default" sourceCardinality="0..1" targetCardinality="0..1"/>
+    <HasRelation name="tiene" source="Videoclub" target="Pelicula" type="Aggregation" sourceCardinality="0..1" targetCardinality="0..1"/>
   </ClassDiagramRelations>
 </ClassDiagram>

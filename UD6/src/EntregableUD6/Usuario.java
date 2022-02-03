@@ -47,41 +47,59 @@ public class Usuario {
             return false;
         } else {
             this.esPremium = true;
-            return true;
-        }
-    }
-    public boolean anularSuscrip() {
-        if (getEsPremium()== false){
-            System.err.println("¡El usuario no es premium!"
-                    + " Debe serlo para anular la suscripción");
-            return false;
-        } else {
-            this.esPremium = false;
+            System.out.println("Suscrito exitosamente.");
             return true;
         }
     }
     
-    /**
-    *AÚN NO SE PUEDE HACER, FALTA HACER CLASE VIDEOCLUB
-    */
-    /*public String buscarNombre(String buscar) {
-        
-    }*/
-
+    public boolean anularSuscrip() {
+        if (this.esPremium == false){
+            System.err.println("¡El usuario no es premium!"
+                    + " Debe serlo para anular la suscripción");
+            return false;
+        } else if (this.esPremium == true){
+            this.esPremium = false;
+            return true;
+        } else return false;
+    }
+    
     public void verPelisAlquiladas() {
+        getBiblioteca();
     }
-
-    public void verPelisVideoclub() {
-    }
-
+    
     public void alquilar(Pelicula p) {
-        biblioteca[cuantasPelis] = p;
-        cuantasPelis++;
+        if (this.esPremium == true){
+            biblioteca[cuantasPelis] = p;
+            cuantasPelis++;
+        } else if (this.esPremium == false && cuantasPelis >= 1){
+            System.err.println("Ya tienes una película alquilada\n"
+                + "¡Para poder alquilar más de una película a la vez, suscríbete!");
+        }
+            
     }
-
+    
+    public void devolverP(Pelicula p) {
+        int pos = -1;
+        for (int i = 0; i < biblioteca.length; i++) {
+            if (biblioteca[i] == p) {
+                pos = i;
+                break;
+            }
+        }
+        if (pos != -1) {
+            devolver(pos);
+        } else {
+            System.err.println("El usuario no posee la película indicada.");
+        }
+    }
+    
     public void devolver(int pos) {
-        for (int i = pos; i < biblioteca.length-1; i++) {
-            biblioteca[i] = biblioteca[i+1];
+        if (cuantasPelis <= 0){
+            System.err.println("¡No tienes películas para devolver!");
+        } else {
+            for (int i = pos; i < biblioteca.length-1; i++) {
+                biblioteca[i] = biblioteca[i+1];
+            }
         }
     }
 }
