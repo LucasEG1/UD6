@@ -3,24 +3,24 @@ package EntregableUD6;
 public class Pelicula {
 
     public enum eGenero {
-    Aventuras, Horror, CienciaFiccion, Comedia, Drama
+    Aventuras, Horror, CienciaFiccion, Comedia, Drama, Accion
     }
     
     private String titulo;
     private String fechaEstreno;
     private String sinopsis;
-    private Usuario poseedor;
-    private boolean esAlquilada;
+    private Usuario poseedor = null;
+    private boolean esAlquilada = false;
     public int cuantasPelis = 0;
     public eGenero genero;
 
     //Constructor
-    public Pelicula(String titulo, String fechaEstreno, String sinopsis) {    
+    public Pelicula(eGenero genero, String titulo, String fechaEstreno, String sinopsis) {    
         this.titulo = titulo;
         this.fechaEstreno = fechaEstreno;
         this.sinopsis = sinopsis;
         this.esAlquilada = false;
-        this.poseedor = poseedor;
+        this.poseedor = null;
     }
 
     //Getters - Setters
@@ -88,7 +88,7 @@ public class Pelicula {
         System.out.println("--Sinopsis " + getSinopsis());
         if (getEsAlquilada() == true){
             System.out.println("¿Está alquilada?: " + getEsAlquilada());
-            System.out.println("--Alquilada por: " + getPoseedor());
+            System.out.println("--Alquilada por: " + getPoseedor().getNombre());
         } else {
             System.out.println("--¿Está alquilada?: " + getEsAlquilada());
         }

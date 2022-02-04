@@ -21,7 +21,7 @@ public class Func {
     public static int menu() {
         Scanner in = new Scanner(System.in);
         System.out.println("==|¿QUÉ QUIERES HACER?|==");
-        System.out.println("1. Ver películas disponibles");
+        System.out.println("1. Ver todas las películas");
         System.out.println("2. Alquilar una película");
         System.out.println("3. Devolver una película");
         System.out.println("4. Ver quién tiene cada película");
@@ -53,9 +53,9 @@ public class Func {
             pelis[i].getTitulo();
             if (pelis[i].getEsAlquilada() == true) {
                 Usuario p = pelis[i].getPoseedor();
-                System.out.println(i + p.getNombre());
+                System.out.println(i + ": " + p.getNombre());
             } else {
-                System.out.println(i + "¡Sin alquilar!");
+                System.out.println(i + ": ¡Sin alquilar!");
             }
         }
     }
@@ -74,5 +74,22 @@ public class Func {
         mostrarTodas(vp);
         int opcion = rango(0, vp.length);
         return vp[opcion];
+    }
+    public static void alquilarPeli(Usuario u, Pelicula p){
+        if (u.alquilar(p, u) == true){
+            u.alquilar(p, u);
+            p.setPoseedor(u);
+            p.setEsAlquilada(true);
+        } else {
+            p.setPoseedor(null);
+            p.setEsAlquilada(false);
+        }
+    }
+    public static void devolverPeli(Usuario u, Pelicula p){
+        if (u.devolverP(p) == true) {
+            u.devolverP(p);
+            p.setEsAlquilada(false);
+            p.setPoseedor(null);
+        }
     }
 }
