@@ -77,14 +77,12 @@ public class Func {
     }
     public static void alquilarPeli(Usuario u, Pelicula p){
         if (u.alquilar(p, u) == true && p.getEsAlquilada()== false){
-            u.alquilar(p, u);
             p.setPoseedor(u);
             p.setEsAlquilada(true);
         }
     }
     public static void devolverPeli(Usuario u, Pelicula p){
         if (u.devolverP(p) == true) {
-            u.devolverP(p);
             p.setEsAlquilada(false);
             p.setPoseedor(null);
         }
