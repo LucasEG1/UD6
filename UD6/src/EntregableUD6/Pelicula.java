@@ -3,7 +3,7 @@ package EntregableUD6;
 public class Pelicula {
 
     public enum eGenero {
-    Aventuras, Horror, CienciaFiccion, Comedia, Drama, Accion
+    Aventuras, Horror, CienciaFiccion, Comedia, Drama, Accion;
     }
     
     private String titulo;
@@ -40,7 +40,7 @@ public class Pelicula {
         return esAlquilada;
     }
     public eGenero getGenero(){
-        return this.genero;
+        return genero;
     }
     
     public void setTitulo(String titulo) {
@@ -84,7 +84,7 @@ public class Pelicula {
     public void mostrarPelicula() {
         System.out.println("--Título: " + getTitulo());
         System.out.println("--Estreno: " + getFechaEstreno());
-        System.out.println("--Género: " + getGenero());
+        //System.out.println("--Género: " + getGenero());
         System.out.println("--Sinopsis " + getSinopsis());
         if (getEsAlquilada() == true){
             System.out.println("¿Está alquilada?: " + getEsAlquilada());

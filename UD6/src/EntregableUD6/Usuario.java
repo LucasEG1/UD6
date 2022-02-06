@@ -65,23 +65,24 @@ public class Usuario {
         getBiblioteca();
     }
     public boolean alquilar(Pelicula p, Usuario u) {
-        if (p.getPoseedor() == null || p.getPoseedor() != u){
+        if (p.getPoseedor() == null){
             if (this.esPremium == true) {
                 biblioteca[cuantasPelis] = p;
                 this.cuantasPelis++;
                 return true;
             }
+            
             if (this.esPremium == false && cuantasPelis < 1) {
                 biblioteca[cuantasPelis] = p;
                 cuantasPelis++;
                 return true;
             } else if (cuantasPelis >= 1) {
-                System.err.println("Tienes una película alquilada\n"
+                System.err.println("El usuario tiene " + cuantasPelis + " película(s) alquilada(s)\n"
                         + "¡Para poder alquilar más de una película a la vez, suscríbete!");
                 return false;
             }
                
-        } else {
+        } else if (p.getPoseedor() != u){
             System.err.println("¡Esta película ya está alquilada!");
             return false;
         }
@@ -97,6 +98,7 @@ public class Usuario {
         }
         if (pos != -1) {
             devolver(pos);
+            System.err.println("Película devuelta con éxito.");
             return true;
         } else {
             System.err.println("El usuario no posee la película indicada.");
