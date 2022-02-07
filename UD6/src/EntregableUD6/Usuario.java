@@ -40,7 +40,8 @@ public class Usuario {
         this.correo = correo;
     }
 
-    //Otras funciones
+    /** Otras funciones */
+    //Hace que el usuario se haga premium si no lo era antes.
     public boolean suscribirse() {
         if (this.esPremium == true){
             System.err.println("¡El usuario ya es premium!");
@@ -51,6 +52,8 @@ public class Usuario {
             return true;
         }
     }
+    
+    //Quita el 'premium' al usuario, si es que lo tiene.
     public boolean anularSuscrip() {
         if (this.esPremium == false){
             System.err.println("¡El usuario no es premium!"
@@ -62,9 +65,15 @@ public class Usuario {
             return true;
         } else return false;
     }    
+    
+    //Imprime la biblioteca del usuario
     public void verPelisAlquiladas() {
         getBiblioteca();
     }
+    
+    /** Si la película no está alquilada y si no se ha excedido el número de
+       películas que el usuario puede tener (no-premiums).
+    */
     public boolean alquilar(Pelicula p, Usuario u) {
         if (p.getPoseedor() == null){
             if (this.esPremium == true) {
@@ -89,6 +98,8 @@ public class Usuario {
         }
         return false;
     }
+    
+    //Si la película pertenece al usuario, la devuelve al videoclub.
     public boolean devolverP(Pelicula p) {
         int pos = -1;
         for (int i = 0; i < cuantasPelis; i++) {
@@ -116,6 +127,8 @@ public class Usuario {
             cuantasPelis--;
         }
     }
+    
+    //Muestra las películas en posesión del usuario
     public void verBiblioteca(){
         for (int i = 0; i < cuantasPelis; i++) {
             biblioteca[i].mostrarPelicula();

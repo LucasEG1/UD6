@@ -81,6 +81,7 @@ public class Pelicula {
     }
 
     //Otras funciones
+    //Muestra la infomación de la película (Título, sinopsis, fecha de estreno, Si es alquilada - Y por quién -).
     public void mostrarPelicula() {
         System.out.println("--Título: " + getTitulo());
         System.out.println("--Estreno: " + getFechaEstreno());
