@@ -32,7 +32,7 @@ public class Videoclub {
         
         /* COMIENZO DEL PROGRAMA */
         
-        //Pide el usuario que se vaya a usar (Solo comienzo del programa
+        //Pide el usuario que se vaya a usar (Solo comienzo del programa)
         Usuario usuarioActual = Func.identificarse(usuarios);
         
         //Bucle principal.

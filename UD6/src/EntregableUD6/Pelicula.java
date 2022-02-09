@@ -11,7 +11,7 @@ public class Pelicula {
     private String sinopsis;
     private Usuario poseedor = null;
     private boolean esAlquilada = false;
-    public int cuantasPelis = 0;
+    private int cuantasPelis = 0;
     public eGenero genero;
 
     //Constructor
