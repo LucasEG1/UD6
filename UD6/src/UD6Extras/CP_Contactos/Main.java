@@ -14,9 +14,9 @@ public class Main {
         
         // Variables auxiliares
         int opcion;     // opcion del menú
-        String n, c, t; // nombre, correo y teléfono
-        String buscar;  // término a buscar
+        String buscar;  //Utilizado para buscar
         int pos;        // posicion
+        
         Agenda agendaEncontrados; // agenda auxiliar para búsquedas
 
         // Bucle principal
@@ -29,7 +29,7 @@ public class Main {
                     break;
 
                 case 2: // Añadir contacto
-                    
+                    String n, c, t; // nombre, correo y teléfono
                     // Pedimos datos del nuevo contacto
                     System.out.print("¿Nombre? ");
                     n = pedirString();
@@ -54,6 +54,7 @@ public class Main {
                     break;
                     
                 case 4: // Buscar por nombre
+                    
                     // Pedimos nombre a buscar
                     System.out.print("¿Nombre? ");
                     buscar = pedirString();
