@@ -1,7 +1,6 @@
 package UD6Extras.CP_Contactos;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 
 
 public class Agenda {
@@ -18,7 +17,7 @@ public class Agenda {
     }
 
     // GETTERS
-    ArrayList getConts() {
+    ArrayList getContactos() {
         return contactos;
     }
     int getCuantos() {
@@ -49,9 +48,9 @@ public class Agenda {
         }
         return false;
     }
-
+    /**
     //Versión 1: Devuelve un int[] con las posiciones del vector ‘conts’ cuyo nombre contiene ‘nombre’
-    /** ArrayList buscarNombreV1(String str) {
+     ArrayList buscarNombreV1(String str) {
 
         
         // Vector de posiciones
@@ -64,10 +63,10 @@ public class Agenda {
             }
         }
         return coincidencias;
-    } */
+    }
 
     //Versión 2: Devuelve un vector de Contactos con los conts cuyo nombre contiene ‘str’
-    /** Contacto[] buscarNombreV2(String str) {
+    Contacto[] buscarNombreV2(String str) {
 
         // Vector de conts
         Contacto[] vcon = new Contacto[conts.length];
@@ -155,7 +154,6 @@ public class Agenda {
                 at.agregarContacto(contactos.get(i));
             }
         }
-
         // Devolvemos la agenda
         return at;
     }
@@ -167,5 +165,4 @@ public class Agenda {
             contactos.get(i).imprimir();
         }
     }
-
 }
